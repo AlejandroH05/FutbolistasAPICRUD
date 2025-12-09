@@ -1,0 +1,192 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+:host{
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --muted: #64748b;
+  --accent: #06b6d4;
+  --success: #16a34a;
+  --danger: #ef4444;
+  --radius: 12px;
+  display:block;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #0f1724;
+}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:0 8px 30px rgba(2,6,23,0.06);
+  border:1px solid rgba(15,23,36,0.04);
+}
+
+.titulo{
+  font-size:1.25rem;
+  margin:0 0 16px 0;
+  font-weight:500;
+  color:#08122a;
+}
+
+.card-header{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.tab{
+  opacity:.55;
+  cursor:pointer;
+  padding:6px 8px;
+  border-radius:8px;
+  transition:all .18s ease;
+  font-weight:500;
+  color:var(--muted);
+}
+
+.tab:hover{opacity:1; transform:translateY(-2px)}
+
+.tab.active{
+  color: black;
+  font-size: 24px;
+}
+
+.form{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+  width: 100%;
+}
+
+h2 {  
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form input, .form select, .form textarea{
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(15,23,36,0.06);
+  background:transparent;
+  color:inherit;
+  font-size:0.95rem;
+  transition:box-shadow .12s, transform .08s;
+}
+
+.form input:focus, .form select:focus, .form textarea:focus{
+  outline:none;
+  box-shadow:0 8px 24px rgba(6,182,212,0.08);
+  border-color: rgba(6,182,212,0.25);
+  transform:translateY(-1px);
+}
+
+.btn-guardar{
+  background:linear-gradient(90deg,var(--accent), #7c3aed);
+  color:#021026;
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow:0 10px 30px rgba(7,11,30,0.08);
+}
+
+.btn-guardar:active{transform:translateY(1px)}
+
+.tabla{width:100%; border-collapse:collapse}
+
+.encabezado{
+  display:flex;
+  justify-content: space-between;
+  font-weight:600;
+  color:var(--muted);
+  border-bottom:1px solid rgba(15,23,36,0.04);
+}
+
+.fila{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding:12px 8px;
+  gap:8px;
+  border-bottom:1px solid rgba(15,23,36,0.03);
+  transition:background .12s;
+}
+
+.fila:hover{background:rgba(6,182,212,0.02)}
+
+.cell{
+  font-size:0.95rem;
+  color:#0b1724;
+}
+
+
+.btn{
+  display:inline-grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  border:none;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:transform .12s, box-shadow .12s, opacity .12s;
+}
+
+.btn:active{transform:translateY(1px)}
+
+.accion-verde{
+  background: linear-gradient(180deg, var(--success), #059669);
+  box-shadow: 0 8px 20px rgba(5,150,105,0.12);
+  border-radius:10px;
+  width:40px;
+  height:40px;
+  display:inline-grid;
+  place-items:center;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+.accion-verde:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(5,150,105,0.16);
+}
+.accion-verde:active{transform:translateY(1px)}
+.accion-verde:focus{outline:3px solid rgba(16,185,129,0.14); outline-offset:2px}
+
+.accion-roja{
+  background: linear-gradient(180deg, var(--danger), #dc2626);
+  box-shadow: 0 8px 20px rgba(220,38,38,0.12);
+  border-radius:10px;
+  width:40px;
+  height:40px;
+  display:inline-grid;
+  place-items:center;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+.accion-roja:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(220,38,38,0.16);
+}
+.accion-roja:active{transform:translateY(1px)}
+.accion-roja:focus{outline:3px solid rgba(239,68,68,0.12); outline-offset:2px}
+
+.acciones{display:flex; gap:10px; justify-content:center;}
+.accion-item{display:flex; flex-direction:column; align-items:center}
+.accion-texto{font-size:11px; opacity:0.6; margin-top:6px}
+
+@media (max-width:720px){
+  .encabezado, .fila{grid-template-columns: 1fr;}
+  .card{padding:14px}
+  .titulo{font-size:1.05rem}
+  .form{gap:8px}
+}
+
+.acciones-col {
+  display: flex;
+  color: darkgray;
+  font-size: 20px;
+}
+

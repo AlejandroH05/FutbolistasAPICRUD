@@ -1,0 +1,87 @@
+<h2><strong>Proyecto Api CRUD:</strong> Alan Gómez | Alejandro Hilarión</h2>
+
+<div class="card">
+
+  <div class="card-header">
+    <span class="tab active">Usuarios</span>
+  </div>
+
+  <form class="form" (ngSubmit)="guardar()">
+    <input
+      type="text"
+      placeholder="Nombre"
+      [(ngModel)]="modelo.nombre"
+      name="nombre"
+      required
+    />
+
+    <input
+      type="text"
+      placeholder="Posición"
+      [(ngModel)]="modelo.posicion"
+      name="posicion"
+      required
+    />
+
+    <input
+    type="number"
+    placeholder="Edad"
+    [(ngModel)]="modelo.edad"
+    name="edad"
+    required
+    />
+
+    <input
+    type="text"
+    placeholder="Nacionalidad"
+    [(ngModel)]="modelo.nacionalidad"
+    name="nacionalidad"
+    required
+    />
+
+    <input
+    type="text"
+    placeholder="Club"
+    [(ngModel)]="modelo.club"
+    name="club"
+    required
+    />
+
+    <button type="submit" class="btn-guardar">
+      {{ editMode ? 'Actualizar' : 'Guardar' }}
+    </button>
+  </form>
+
+  <div class="tabla">
+    <div class="fila encabezado">
+      <div class="acciones-col">Nombre</div>
+      <div class="acciones-col">Posición</div>
+      <div class="acciones-col">Edad</div>
+      <div class="acciones-col">Nacionalidad</div>
+      <div class="acciones-col">Club</div>
+      <div class="acciones-col">Acciones</div>
+    </div>
+
+    <div class="fila" *ngFor="let f of futbolistas">
+      <div class="nombre">{{ f.nombre }}</div>
+      <div class="correo">{{ f.posicion }}</div>
+      <div class="correo">{{ f.edad }}</div>
+      <div class="correo">{{ f.nacionalidad }}</div>
+      <div class="correo">{{ f.club }}</div>
+
+      <div class="acciones">
+  <div class="accion-item">
+    <button class="btn accion-verde" (click)="editar(f)">✔</button>
+    <small class="accion-texto">Actualizar</small>
+  </div>
+
+  <div class="accion-item">
+    <button class="btn accion-roja" (click)="eliminar(f._id)">✘</button>
+    <small class="accion-texto">Eliminar</small>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
