@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 })
 export class FutbolistasService {
 
-  private baseUrl = `${environment.apiBaseUrl}/usuarios`;
+  private baseUrl = `${environment.apiBaseUrl}/futbolistas`;
 
   constructor(private http: HttpClient) {}
 
@@ -17,16 +17,16 @@ export class FutbolistasService {
     return this.http.get<Futbolista[]>(this.baseUrl);
   }
 
-  crearFutbolista(futbolista: Futbolista): Observable<Futbolista> {
+  createFutbolista(futbolista: Futbolista): Observable<Futbolista> {
     return this.http.post<Futbolista>(this.baseUrl, futbolista);
   }
 
-  actualizarFutbolista(id: string, futbolista: Futbolista): Observable<any> {
+  updateFutbolista(id: string, futbolista: Futbolista): Observable<any> {
     const { _id, ...payload } = futbolista as any;
     return this.http.put(`${this.baseUrl}/${id}`, payload);
   }
 
-  eliminarFutbolista(id: string): Observable<any> {
+  deleteFutbolista(id: string): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }

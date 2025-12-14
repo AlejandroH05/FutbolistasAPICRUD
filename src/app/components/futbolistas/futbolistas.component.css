@@ -94,6 +94,17 @@ h2 {
   box-shadow:0 10px 30px rgba(7,11,30,0.08);
 }
 
+.btn-cancelar{
+  background:linear-gradient(90deg,var(--accent), #7c3aed);
+  color:#021026;
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow:0 10px 30px rgba(7,11,30,0.08);
+}
+
 .btn-guardar:active{transform:translateY(1px)}
 
 .tabla{width:100%; border-collapse:collapse}
@@ -106,6 +117,13 @@ h2 {
   border-bottom:1px solid rgba(15,23,36,0.04);
 }
 
+.encabezado > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
 .fila{
   display:flex;
   justify-content: space-between;
@@ -114,6 +132,19 @@ h2 {
   gap:8px;
   border-bottom:1px solid rgba(15,23,36,0.03);
   transition:background .12s;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: 
+    2fr   /* Nombre */
+    2fr   /* Posición */
+    1fr   /* Edad */
+    2fr   /* Nacionalidad */
+    2fr   /* Club */
+    1fr;  /* Acciones */
+  align-items: center;
+  text-align: center;
 }
 
 .fila:hover{background:rgba(6,182,212,0.02)}
@@ -190,3 +221,31 @@ h2 {
   font-size: 20px;
 }
 
+.app-content {
+	min-height: calc(100vh - 120px);
+}
+.site-footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+.site-footer .footer-inner {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.site-footer a {
+	color: #ffffff;
+	text-decoration: none;
+	margin: 0 6px;
+	opacity: 0.9;
+}
+.site-footer a:hover {
+	opacity: 1;
+	text-decoration: underline;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

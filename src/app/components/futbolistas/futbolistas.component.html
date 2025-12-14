@@ -1,54 +1,22 @@
-<h2><strong>Proyecto Api CRUD: Futbolistas Edition</strong> Alan Gómez y Alejandro Hilarión</h2>
-
 <div class="card">
 
   <div class="card-header">
-    <span class="tab active">Usuarios</span>
+    <span class="tab active">Futbolistas</span>
   </div>
 
   <form class="form" (ngSubmit)="guardar()">
-    <input
-      type="text"
-      placeholder="Nombre"
-      [(ngModel)]="modelo.nombre"
-      name="nombre"
-      required
-    />
-
-    <input
-      type="text"
-      placeholder="Posición"
-      [(ngModel)]="modelo.posicion"
-      name="posicion"
-      required
-    />
-
-    <input
-    type="number"
-    placeholder="Edad"
-    [(ngModel)]="modelo.edad"
-    name="edad"
-    required
-    />
-
-    <input
-    type="text"
-    placeholder="Nacionalidad"
-    [(ngModel)]="modelo.nacionalidad"
-    name="nacionalidad"
-    required
-    />
-
-    <input
-    type="text"
-    placeholder="Club"
-    [(ngModel)]="modelo.club"
-    name="club"
-    required
-    />
+    <input type="text" placeholder="Nombre" [(ngModel)]="modelo.nombre" name="nombre" required/>
+    <input type="text" placeholder="Posición" [(ngModel)]="modelo.posicion" name="posicion" required/>
+    <input type="number" placeholder="Edad" [(ngModel)]="modelo.edad" name="edad" required/>
+    <input type="text" placeholder="Nacionalidad" [(ngModel)]="modelo.nacionalidad" name="nacionalidad" required/>
+    <input type="text" placeholder="Club" [(ngModel)]="modelo.club" name="club" required/>
 
     <button type="submit" class="btn-guardar">
       {{ editMode ? 'Actualizar' : 'Guardar' }}
+    </button>
+
+    <button type="button" class="btn-cancelar" (click)="cancelar()" [disabled]="!editMode">
+      Cancelar
     </button>
   </form>
 
